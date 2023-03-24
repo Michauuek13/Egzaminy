@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <title>Zamówienia hurtowe</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="styl4.css">
+    <script src="man.js" type="application/javascript" defer></script>
+</head>
+
+<body>
+    <header>
+        <h1>Sieci komputerowe</h1>
+    </header>
+    <main>
+        <h2>Aktualizacja i zamówienia materiałów</h2>
+        <p>Do wewnętrznego użytku firmy</p>
+        <img src="pc.png" alt="Sieć komputerowa">
+        <section>
+            <table>
+                <tr>
+                    <th>Produkt</th>
+                    <th>Jednostka</th>
+                    <th>Dostępna ilość</th>
+                    <th>Aktualizacja</th>
+                    <th>Zamówienie</th>
+                </tr>
+                <tr>
+                    <td class="produkt">Skrętka U/UTP drut</td>
+                    <td>metr</td>
+                    <td class="ilosc">15</td>
+                    <td><button type="button" class="wyz">Aktualizuj</button></td>
+                    <td><button type="button" class="zam">Zamów</button></td>
+                </tr>
+                <tr>
+                    <td class="produkt">Skrętka U/UTP linka</td>
+                    <td>metr</td>
+                    <td class="ilosc">4</td>
+                    <td><button type="button" class="wyz">Aktualizuj</button></td>
+                    <td><button type="button" class="zam">Zamów</button></td>
+                </tr>
+                <tr>
+                    <td class="produkt">Wtyki 8P8C</td>
+                    <td>sztuki</td>
+                    <td class="ilosc">10</td>
+                    <td><button type="button" class="wyz">Aktualizuj</button></td>
+                    <td><button type="button" class="zam">Zamów</button></td>
+                </tr>
+                <tr>
+                    <td class="produkt">Moduły Keystone</td>
+                    <td>sztuki</td>
+                    <td class="ilosc">18</td>
+                    <td><button type="button" class="wyz">Aktualizuj</button></td>
+                    <td><button type="button" class="zam">Zamów</button></td>
+                </tr>
+            </table>
+        </section>
+    </main>
+    <footer>
+        <a href="http://sieci.pl/" >Nasza strona internetowa!!</a>
+        <p>Stronę przygotował: Michał Kopacz</p>
+    </footer>
+
+<script>
+    var ilosc = document.querySelectorAll(".ilosc");
+    var produkt = document.querySelectorAll(".produkt");
+    var przyciskiWyz = document.querySelectorAll(".wyz");
+    var przyciskiZam = document.querySelectorAll(".zam");
+    var order_m = 0;
+
+    check_if();
+
+    function check_if()
+    {
+    for (var i = 0; i < ilosc.length; i++)
+        {
+        var elem = ilosc[i];
+        if (elem.innerHTML === "0")
+        {
+        elem.style.backgroundColor = "Red";
+        }
+        else if (elem.innerHTML >= 1 && elem.innerHTML <= 5)
+        {
+        elem.style.backgroundColor = "Yellow";
+        } 
+        else if (elem.innerHTML >= 60) 
+        {
+        elem.style.backgroundColor = "Green";
+        } 
+        else 
+        {
+        elem.style.backgroundColor = "Honeydew";
+        }
+    }
+    }
+
+    przyciskiWyz.forEach(function(elem, i) {
+    elem.addEventListener("click", function() {
+        var nowaIlosc = window.prompt("Podaj nową ilość");
+        ilosc[i].innerHTML = nowaIlosc;
+        check_if();
+    });
+    });
+
+    przyciskiZam.forEach(function(elem, i) {
+    elem.addEventListener("click", function() {
+        order_m++;
+        window.alert("Zamówienie nr: " + order_m + " pro: " + produkt[i].innerHTML);
+    });
+    });
+</script>
+</body>
+
+</html>
+
