@@ -20,16 +20,17 @@
     position: absolute;
 }
 
-#lista {
-    color: white;
+#prawy ul, #prawy img{
+    float: left;
 }
-
-#paragraf {
-    margin: 10px
+p{
+    padding: 10px;
+    clear: both;
 }
 
 #obraz {
-    margin: 10px; border: 1px; border-color: white;
+    padding: 10px;
+    border: 1px solid white;
 }
 
 #przycisk_indygo {
