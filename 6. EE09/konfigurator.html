@@ -1,0 +1,94 @@
+<html>
+    <head>
+        <title>Style w JavaScript</title>
+        <link rel="stylesheet" href="styl6.css">
+    </head>
+
+    <body>
+        <div id="blok_lewy">
+            <h1>Konfigurator stylu</h1>
+            <p>Podaj kolor tła <br>
+                <input type="button" value="Indigo" id="przycisk_indygo"  onclick="indygo()">
+                <input type="button" value="SteelBlue" id="przycisk_steelblue"   onclick="blue()">
+                <input type="button" value="Olive" id="przycisk_olive"  onclick="olive()">
+            </p>
+            <p>
+                Podaj kolor czcionki<br>
+                <select id="kolor" onchange="zmianakoloru()">
+                    <option>White</option>
+                    <option>Tan</option>
+                    <option>Bisque</option>
+                    <option>Plum</option>
+                </select>
+            </p>
+            <p>
+                Podaj rozmiar czcionki w procentach, np. 200%<br>
+                <input type="text" id="rozmiar" onchange="rozmiar()" value="100%">
+            </p>
+            <p>
+                Czy rysunek ma mieć ramkę? <br>
+                <input type="checkbox" id="ramka" onclick="ramka()"checked> Rysuj ramkę
+            </p>
+            <p>
+                Jaki typ punktora listy? <br>
+                <input type="radio" name="lista" id="o1" onclick="lista()"> dysk <br>
+                <input type="radio" name="lista" id="o2" onclick="lista()"> kwadrat <br>
+                <input type="radio" name="lista" id="o3" onclick="lista()"> okrąg <br>
+            </p>
+        </div>
+        <div id="blok_prawy">
+            <img src="gibraltar.jpg" id="obraz" alt="półwysep Gibraltar">
+            <ul id="punkty">
+                <li>element 1</li>
+                <li>element 2</li>
+                <li>element 3</li>
+            </ul>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. </p>
+        </div>
+        <div id="stopka">
+            Autor: Michał Kopacz
+        </div>
+        <script>
+            function indygo(){
+                kolortla = document.getElementById("przycisk_indygo").value
+                document.getElementById("blok_prawy").style.background = kolortla
+            }
+            function blue(){
+                kolortla = document.getElementById("przycisk_steelblue").value
+                document.getElementById("blok_prawy").style.background = kolortla
+            }
+            function olive(){
+                kolortla = document.getElementById("przycisk_olive").value
+                document.getElementById("blok_prawy").style.background = kolortla
+            }
+            function zmianakoloru(){
+                kolorczcionki = document.getElementById("kolor").value
+                document.getElementById("blok_prawy").style.color = kolorczcionki
+            }
+            function rozmiar(){
+                rozmiarcz = document.getElementById("rozmiar").value
+                document.getElementById("blok_prawy").style.fontSize = rozmiarcz
+            }
+            function ramka(){
+                ramka = document.getElementById("ramka").checked
+                if (ramka == true)
+                    document.getElementById("obraz").style.border = "1px solid white"
+                else    
+                    document.getElementById("obraz").style.border = "none"
+            }
+            
+            
+            function lista(){
+                o1=document.getElementById("o1").checked
+                o2=document.getElementById("o2").checked
+                o3=document.getElementById("o3").checked
+                if (o1 == true)
+                    document.getElementById("punkty").style.listStyleType = "disc"
+                if (o2 == true)
+                    document.getElementById("punkty").style.listStyleType = "square"
+                if (o3 == true)
+                    document.getElementById("punkty").style.listStyleType = "circle"
+            }
+        </script>
+    </body>
+</html>
