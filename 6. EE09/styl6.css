@@ -5,13 +5,13 @@
 #blok_lewy {
     background-color: maroon; font-display: white; height: 600px; width: 30%;
     color: white;
-    position: absolute;
+    float: left;
 }
 
 #blok_prawy {
     background-color: maroon; height: 600px; width: 70%;
     margin-left: 70%;
-    position: absolute;
+    float: left;
 }
 
 #stopka {
