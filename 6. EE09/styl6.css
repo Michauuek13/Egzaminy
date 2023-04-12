@@ -1,0 +1,45 @@
+#blok_lewy {
+    background-color: maroon; font-display: white; height: 600px; width: 30%;
+    color: white;
+    position: absolute;
+}
+
+#blok_prawy {
+    background-color: maroon; height: 600px; width: 70%;
+    margin-left: 70%;
+    position: absolute;
+}
+
+#stopka {
+    background-color: dimgray; color: white; width: 100%;
+    margin-top: 600px;
+    position: absolute;
+}
+
+#lista {
+    color: white;
+}
+
+#paragraf {
+    margin: 10px
+}
+
+#obraz {
+    margin: 10px; border: 1px; border-color: white;
+}
+
+#przycisk_indygo {
+    background-color: indigo;
+}
+
+#przycisk_steelblue {
+    background-color: steelblue;
+}
+
+#przycisk_olive {
+    background-color: olive;
+}
+
+#body {
+    font-family: Georgia;
+}
