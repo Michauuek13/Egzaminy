@@ -1,0 +1,70 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Galeria</title>
+    <link rel="stylesheet" href="styl7.css">
+</head>
+<body>
+    <div id="baner">
+        <h2>Galeria miejsc ciekawych</h2>
+    </div>
+    <div id="glowny">
+        <img src="lanzarotte.jpg" alt="galeria" id="zdjecie">
+    </div>
+    <div id="lewy">
+        <h3>Przeglądaj zdjęcia</h3>
+        <img src="lanzarotte.jpg" alt="lanzarotte" id="zd1" onclick="show(document.getElementById('zd1').alt)">
+        <img src="pekin.jpg" alt="pekin" id="zd2" onclick="show(document.getElementById('zd2').alt)">
+        <img src="serengeti.jpg" alt="serengeti" id="zd3" onclick="show(document.getElementById('zd3').alt)">
+        <img src="wenecja.jpg" alt="wenecja" id="zd4" onclick="show(document.getElementById('zd4').alt)">
+        <img src="tajlandia.jpg" alt="tajlandia" id="zd5" onclick="show(document.getElementById('zd5').alt)">
+    </div>
+    <div id="prawy">
+        <h3>Obrazy w naszej galerii</h3>
+        <table>
+            <tr>
+                <td>Europa</td>
+                <td>Azja</td>
+                <td>Afryka</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>2</td>
+                <td>1</td>
+            </tr>
+        </table>
+        <p>
+            Polub nas <img src="icon-off.png" id="icon" alt="off" onclick="like()">
+        </p>
+        <a href="https://pixabay.com" target="_blank">Odkryj więcej zdjęć</a>
+    </div>
+    <div id="stopka">
+        Autor: Michał Kopacz
+    </div>
+    <script>
+        function show(zdj){
+            if (zdj == 'lanzarotte')
+                document.getElementById('zdjecie').src = 'lanzarotte.jpg'
+            if (zdj == 'pekin')
+                document.getElementById('zdjecie').src = 'pekin.jpg'
+            if (zdj == 'serengeti')
+                document.getElementById('zdjecie').src = 'serengeti.jpg'
+            if (zdj == 'wenecja')
+                document.getElementById('zdjecie').src = 'wenecja.jpg'
+            if (zdj == 'tajlandia')
+                document.getElementById('zdjecie').src = 'tajlandia.jpg'
+        }
+        function like(){
+            serce = document.getElementById("icon").alt
+            if (serce == 'off'){
+                document.getElementById('icon').alt = 'on'
+                document.getElementById('icon').src = 'icon-on.png'
+            }else{
+                document.getElementById('icon').alt = 'off'
+                document.getElementById('icon').src = 'icon-off.png'
+            }
+                
+        }
+    </script>
+</body>
+</html>
